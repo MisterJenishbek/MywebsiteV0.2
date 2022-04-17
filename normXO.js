@@ -5,7 +5,6 @@ function again(){
     vin='';
     document.getElementById('text').innerHTML = 'Ходит: X';
     aktivhod=0;
-    draw=0;
 }
 var aktivhod=0,vin='';
 

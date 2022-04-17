@@ -7,7 +7,7 @@ function again(){
     aktivhod=0;
     draw=0;
 }
-var aktivhod=0,vin='',draw=0;
+var aktivhod=0,vin='';
 
 function hod(num){
     if(document.getElementById(num).innerHTML == ' '){
@@ -115,16 +115,14 @@ function hod(num){
         }
         document.getElementById('text').innerHTML='Выйграл: '+ vin;
     }
-    draw=0;
-    for(let i = 1; i<10; i++){
-        if(document.getElementById(i).innerHTML!=' '){
-            draw++;
-        }
-        if(draw == 9){
-            document.getElementById('text').innerHTML='Ничья';
-            vin='draw';
-            kolvoDraw++;
-        }
+    for(let i = 1; document.getElementById(i).innerHTML!=' ';i++){
+        if(vin!='X' && vin!='O'){
+            if(i == 9){
+                document.getElementById('text').innerHTML='Ничья';
+                vin='draw';
+                kolvoDraw++;
+            }
+        }    
     }
     document.getElementById('kolvoVinX').innerHTML = kolvoVinX;
     localStorage.setItem('kolvoVinX', kolvoVinX);
